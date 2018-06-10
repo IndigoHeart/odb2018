@@ -1,1 +1,5 @@
+create() updating;
 
+begin
+	self.number := app.myBank.nextAccountNum();
+end;
