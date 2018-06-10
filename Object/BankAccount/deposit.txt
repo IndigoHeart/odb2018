@@ -1,0 +1,5 @@
+deposit(amount: Decimal) updating;
+
+begin
+	self.balance := self.balance + amount;
+end;

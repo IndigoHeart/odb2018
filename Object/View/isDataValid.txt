@@ -1,0 +1,18 @@
+isDataValid():Boolean protected;
+
+begin
+	if txtLastName.text = "" then
+		txtLastName.setFocus();
+		statusLine.caption := "Please enter a last name";
+		return false;
+	elseif txtFirstNames.text = "" then
+		txtFirstNames.setFocus();
+		statusLine.caption := "Please enter first names";
+		return false;
+	elseif txtAddress.text = "" then
+		txtAddress.setFocus();
+		statusLine.caption := "Please enter an address";
+		return false;
+	endif;
+	return true;
+end;

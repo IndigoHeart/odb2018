@@ -1,0 +1,8 @@
+withdraw(amount: Decimal) updating;
+
+begin
+	if self.canWithdraw(amount) = true then
+		self.balance := self.balance - amount;
+	endif;
+end;
+

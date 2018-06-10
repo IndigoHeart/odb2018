@@ -1,0 +1,14 @@
+removeTestData();
+
+//removing all object instances from persistance cache
+//persistent object can be deleted only whitin a transaction
+begin
+	beginTransaction;
+	Bank.instances.purge();
+	ChequeAccount.instances.purge();
+	Customer.instances.purge();
+	CustomerArray.instances.purge();
+	CustomerByLastNameDict.instances.purge();
+	SavingsAccount.instances.purge();
+	commitTransaction;
+end;

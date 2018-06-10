@@ -1,0 +1,16 @@
+filter_Richmond_customers(): CustomerArray serverExecution;
+
+vars
+	dict: CustomerByLastNameDict;
+	array: CustomerArray;
+	cust: Customer;
+begin
+	dict := CustomerByLastNameDict.firstInstance();
+	create array transient;
+	foreach cust in dict where app.isValidObject(cust) and cust.address = "Richmond" do	
+		array.add(cust);
+	endforeach;
+	write dict.size();
+	write array.size();
+	return array;
+end;

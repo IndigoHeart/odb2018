@@ -1,0 +1,14 @@
+createCustomer();
+
+vars
+	cust: Customer;
+begin
+	app.initialize();
+	beginTransaction;
+	create cust persistent;
+	cust.setPropsOnCreate("Monki", "Kamil", "Palikot");
+	commitTransaction;
+	
+	cust.inspect();
+	cust.inspectModal();
+end;

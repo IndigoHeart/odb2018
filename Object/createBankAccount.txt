@@ -1,0 +1,14 @@
+createBankAccount();
+
+vars
+	cheque: ChequeAccount;
+	savings: SavingsAccount;
+begin
+	app.initialize();
+	beginTransaction;
+	create cheque persistent;
+	cheque.setPropsOnCreate(0, 500, null);
+	create savings persistent;
+	savings.setPropsOnCreate(100,4.5, null);
+	commitTransaction;
+end;

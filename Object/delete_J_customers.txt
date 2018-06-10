@@ -1,0 +1,19 @@
+delete_J_customers();
+
+vars
+	dict: CustomerByLastNameDict;
+	cust: Customer;
+	i:	  Integer;
+begin
+	dict := CustomerByLastNameDict.firstInstance();
+	beginTransaction;
+	foreach cust in dict where cust.lastName[1] >= "J" do
+		if cust.lastName[1] >= "K" then
+			break;
+		endif;
+		delete cust;
+		i := i + 1;
+	endforeach;
+	commitTransaction;
+	write i.String & " customers deleted";
+end;

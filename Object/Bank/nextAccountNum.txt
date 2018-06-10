@@ -1,0 +1,6 @@
+nextAccountNum(): Integer updating;
+
+begin
+	self.accountNum := self.accountNum + 1;
+	return self.accountNum;
+end;

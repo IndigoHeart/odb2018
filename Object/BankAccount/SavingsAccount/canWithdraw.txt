@@ -1,0 +1,10 @@
+canWithdraw(amount: Decimal): Boolean protected;
+
+begin
+	if amount > self.balance then
+		write "insufficient funds in saving account";
+		return false;
+	else
+		return true;
+	endif;
+end;

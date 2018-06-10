@@ -1,0 +1,6 @@
+nextCustNum(): Integer updating;
+
+begin
+	self.custNum := self.custNum + 1;
+	return self.custNum;
+end;

@@ -1,0 +1,10 @@
+createCustomers() protected;
+
+vars
+	cust: Customer;
+begin
+	beginTransaction;
+	create cust persistent;
+	cust.setPropsOnCreate(txtAddress.text, txtFirstNames.text, txtLastName.text);
+	commitTransaction;
+end;

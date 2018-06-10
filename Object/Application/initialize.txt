@@ -1,0 +1,11 @@
+initialize() updating;
+
+begin
+	inheritMethod();
+	self.myBank := Bank.firstInstance();
+	if self.myBank = null then
+		beginTransaction;
+		create myBank persistent;
+		commitTransaction;
+	endif;
+end;

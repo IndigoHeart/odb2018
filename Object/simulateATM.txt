@@ -1,0 +1,26 @@
+simulateATM();
+
+vars
+	accountType: String;
+	ba: BankAccount;
+	amount: Decimal[12,2];
+begin
+	//Select account
+	write 'Enter "cheque" or "savings"';
+	read accountType;
+	if accountType = "cheque" then
+		ba :=  ChequeAccount.firstInstance();
+		write "Balance of cheque account = " & ba.balance.String;
+	elseif accountType = "savings" then
+		ba :=  SavingsAccount.firstInstance();
+		write "Balance of savings account = " & ba.balance.String;		
+	endif;
+	//Enter amount
+	write "Enter amount to withdraw";
+	read amount;
+	//Process withdrawal
+	beginTransaction;
+	ba.withdraw(amount);
+	commitTransaction;
+	write "New balance of account = " & ba.balance.String;
+end;

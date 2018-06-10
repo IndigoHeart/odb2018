@@ -1,0 +1,8 @@
+setPropsOnCreate(bal, od:Decimal; cust: Customer) updating;
+
+begin
+	self.balance:=bal;
+	self.overdraftLimit := od;
+	self.myCustomer := cust;
+	self.myBank := app.myBank;
+end;

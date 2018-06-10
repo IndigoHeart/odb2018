@@ -1,0 +1,9 @@
+setPropsOnCreate(bal, rate: Decimal; cust: Customer) updating;
+
+begin
+	self.balance := bal;
+	self.interestRate := rate;
+	self.myCustomer := cust;
+	self.myBank := app.myBank;
+end;
+

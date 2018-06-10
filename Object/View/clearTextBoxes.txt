@@ -1,0 +1,8 @@
+clearTextBoxes() protected;
+
+begin
+	txtLastName.text := "";
+	txtFirstNames.text := "";
+	txtAddress.text := "";
+	txtLastName.setFocus();
+end;

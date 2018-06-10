@@ -1,0 +1,5 @@
+highValue():Boolean condition;
+
+begin
+	return self.balance >= 100000;
+end;

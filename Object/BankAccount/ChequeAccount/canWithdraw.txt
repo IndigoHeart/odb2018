@@ -1,0 +1,10 @@
+canWithdraw(amount: Decimal): Boolean protected;
+
+begin
+	if amount > self.balance + self.overdraftLimit	then
+		write "insufficient funds in cheque account";
+		return false;
+	else
+		return true;
+	endif;
+end;

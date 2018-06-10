@@ -1,0 +1,22 @@
+testHighValue();
+
+vars
+	cheque: ChequeAccount;
+begin
+	app.initialize();
+	beginTransaction;
+	create cheque persistent;
+	cheque.setPropsOnCreate(0,0,null);
+	commitTransaction;
+	write app.myBank.allHighValueAccounts.size();
+	
+	beginTransaction;
+	cheque.deposit(100000);
+	commitTransaction;
+	write app.myBank.allHighValueAccounts.size();
+	
+	beginTransaction;
+	cheque.withdraw(1);
+	commitTransaction;
+	write app.myBank.allHighValueAccounts.size();
+end;

@@ -1,0 +1,1 @@
+canWithdraw(amount: Decimal): Boolean protected, abstract;

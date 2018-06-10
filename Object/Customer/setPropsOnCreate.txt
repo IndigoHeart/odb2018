@@ -1,0 +1,8 @@
+setPropsOnCreate(addr, first, last: String) updating;
+
+begin
+	self.address := addr.trimBlanks();
+	self.firstName := first.trimBlanks();
+	self.lastName := last.trimBlanks();
+	self.myBank := app.myBank;
+end;
